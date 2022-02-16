@@ -18,3 +18,6 @@ print(f"Subtraction = {mod_divi}")
 # Exponentiation of two numbers
 expo = a**b
 print(f"Subtraction = {expo}")
+# Remainder of division
+rem = a%b
+print(f"Remainder = {rem}")
