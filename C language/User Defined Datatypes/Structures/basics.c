@@ -32,6 +32,7 @@ int main(){
     scanf("%d", &footballer2.jerseyNo);
 
     printf("Output:-");
+    printf("Size of player = %d", sizeof(player));
     printf("\n\tName:- %s   Age:- %d   Jersey No.:- %d", footballer1.name, footballer1.age, footballer1.jerseyNo);
     printf("\n\tName:- %s   Age:- %d   Jersey No.:- %d", footballer2.name, footballer2.age, footballer2.jerseyNo);
 
