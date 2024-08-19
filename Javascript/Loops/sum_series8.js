@@ -1,0 +1,53 @@
+const readline = require('readline');
+
+// Create an interface for input and output
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+function factorial(number){
+    if(number == 0 || number == 1)
+        return 1;
+    else
+        return number * factorial(number-1);
+}
+
+function exponentiation(base, power){
+    if (power == 0)
+        return 1;
+    else if (power == 1)
+        return base;
+    else{
+        var result = 1;
+        for(let iter=1; iter<=power; iter++)
+            result *= base;
+        return result;
+    }
+}
+
+// Ask the user for the number
+rl.question('Enter No. of terms:- ', (input1) => {
+    var terms = parseFloat(input1);
+    
+    // Ask the user for the second number
+    rl.question('Enter value of x:- ', (input2) => {
+        var number = parseFloat(input2);
+        var sum = 0;
+        var k = 1;
+
+        for(let iter=1; iter<=terms; iter++){
+            //console.log("Iteration " + iter +":- ");
+            let numerator = exponentiation(number, iter);
+            let denominator = factorial(iter);
+            //console.log("N = " + numerator + " D = " + denominator + " P = " + iter);
+            sum += k * numerator/denominator;
+            k *= -1;
+        }
+
+        console.log("Result:- Sum = " + sum.toFixed(3));
+        // Close the readline interface
+        rl.close();
+    });
+});
+
